@@ -1,0 +1,24 @@
+
+/**
+ * For elements that sit on top of the blackout div.
+ */
+.above-blackout {
+    z-index: 10;
+}
+
+/**
+ * Places a semi-transparent "blackout" div on top of the entire page.
+ * The blackout div is visible when the user is typing into the quick-lookup textbox.
+ */
+.full-blackout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    background-color: #aaa;
+    opacity: 0.3;
+}
+
+

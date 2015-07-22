@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+    <property>
+        <name>http.agent.name</name>
+        <value>My Nutch Spider</value>
+    </property>
+
+    <!-- add index-blacklist-whitelist and extractor plugin -->
+    <property>
+        <name>plugin.includes</name>
+        <value>protocol-http|urlfilter-regex|parse-(html|tika)|index-(basic|anchor)|indexer-solr|scoring-opic|urlnormalizer-(pass|regex|basic)|index-blacklist-whitelist|extractor</value>
+        <description>Regular expression naming plugin directory names to
+            include.  Any plugin not matching this expression is excluded.
+            In any case you need at least include the nutch-extensionpoints plugin. By
+            default Nutch includes crawling just HTML and plain text via HTTP,
+            and basic indexing and search plugins. In order to use HTTPS please enable 
+            protocol-httpclient, but be aware of possible intermittent problems with the 
+            underlying commons-httpclient library.
+        </description>
+    </property>
+
+    <!-- for index-blacklist-whitelist plugin.  list of html elements that should NOT be included in the parse -->
+    <property>
+        <name>parser.html.blacklist</name>
+        <value>div.skip,div#access-info,div#masthead,div#terms,div#content-head,div#attachmentdata,div#commentdata,div.xwikidocinfo,div#content-sidebar,div#navigation,div#xwikimenu,div#page-footer,table#searchResults,div#allDocuments,span.wikilink,h1.access,p.access</value>
+        <description>
+            A comma-delimited list of css like tags to identify the elements which should
+            NOT be parsed. Use this to tell the HTML parser to ignore the given elements, e.g. site navigation.
+            It is allowed to only specify the element type (required), and optional its class name ('.')
+            or ID ('#'). More complex expressions will not be parsed.
+            Valid examples: div.header,span,p#test,div#main,ul,div.footercol
+            Invalid expressions: div#head#part1,#footer,.inner#post
+            Note that the elements and their children will be silently ignored by the parser,
+            so verify the indexed content with Luke to confirm results.
+            Use either 'parser.html.blacklist' or 'parser.html.whitelist', but not both of them at once. If so,
+            only the whitelist is used.
+        </description>
+    </property>
+
+
+</configuration>

@@ -1,0 +1,128 @@
+
+
+.below-masthead {
+    margin-top: 75px;
+}
+
+/**
+ * No bullets. No indents.
+ */
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+
+
+/**
+ * The panel has position: relative so that its sub-element,
+ * .autocomplete-list, can specify position: absolute, so that
+ * it gets removed from the flow and floats above the rest of
+ * the page.
+ */
+.autocomplete-panel {
+    position: relative;
+
+    /* move it up so it's touching the textbox */
+    margin-top: -1em;
+}
+
+/**
+ * The list has position: absolute so it gets removed from the
+ * flow and floats above the rest of the page.
+ */
+.autocomplete-list {
+    position: absolute;
+    background-color: white;
+    overflow: hidden;
+
+    border: solid 1px lightgray;
+    font-size: large;
+
+    /* for centering */
+    left: 50%;
+    width: 700px;
+    margin-left: -250px;
+}
+
+/**
+ * em should be bold
+ */
+.autocomplete-list em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.autocomplete-list li {
+    border-bottom: solid 1px #ccc;
+}
+
+.autocomplete-list a {
+    text-align: left;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.autocomplete-list .ws-heading {
+    font-size: 18px;
+}
+
+.autocomplete-list .ws-url {
+    color: green;
+}
+
+.autocomplete-form {
+    padding-top: 20px;
+}
+
+
+/**
+ * Center the textbox in the form.
+ * Set position:relative and z-index:10 so that it's always shown
+ * above the full-blackout div.
+ */
+.autocomplete-form input {
+    position: relative;
+    width: 500px;
+    margin: auto;
+}
+
+
+.padding-horizontal-lite {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.ws-search-results .ws-title {
+    margin-bottom: 2px;
+    margin-top: 20px;
+}
+
+.ws-search-results .ws-url {
+    color: green;
+}
+
+.ws-search-results .ws-headings {
+    font-size: 90%;
+    color: #888;
+}
+
+.ws-search-results .ws-content {
+    font-size: 90%;
+    color: #888;
+}
+
+.ws-page-nav {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/**
+ * em should be bold
+ */
+.ws-search-results em {
+    font-weight: bold;
+    font-style: normal;
+    color: #666;
+}
+

@@ -1,0 +1,21 @@
+<config xmlns="http://bayan.ir" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://bayan.ir http://raw.github.com/BayanGroup/nutch-custom-search/master/zal.extractor/src/main/resources/extractors.xsd">
+    <fields>
+        <field name="headings" multi="true"/>
+    </fields>
+    <documents>
+        <document url="." engine="css">
+            <extract-to field="headings">
+                <text>
+                    <expr value="h2.heading-1" />
+                </text>
+            </extract-to>
+            <extract-to field="headings">
+                <text>
+                    <expr value="h3.heading-1-1" />
+                </text>
+            </extract-to>
+        </document>
+    </documents>
+</config>
